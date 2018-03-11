@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Typography from 'material-ui/Typography';
+
+import CssBaseline from 'material-ui/CssBaseline';
+import RwAppBar from './RwAppBar.js';
 
 class App extends Component {
   render() {
     return (
-      <Typography variant="display4" gutterBotton>
-        React WARS
-      </Typography>
+      <div>
+        <CssBaseline />
+        <RwAppBar />
+      </div>
     );
   }
 }
