@@ -9,7 +9,10 @@ import LabeldText from '../utils/LabeldText';
 
 const styles = {
   card: {
-    maxWidth: 345,
+    maxWidth: 350,
+    marginTop: 5,
+    marginLeft: 10,
+    marginBottom: 5,
   }
 }
 
@@ -22,7 +25,7 @@ function PersonCard(props) {
         <CardContent>
           <Grid container spacing={24}>
             <Grid item xs={12}>
-              <Typography variant="headline" component="h2">
+              <Typography variant="headline" component="h2" align="center">
                 {person.name}
               </Typography>
             </Grid>

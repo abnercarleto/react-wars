@@ -28,7 +28,7 @@ class PeopleList extends Component {
   render() {
     return (
       <div className={this.classes.root}>
-        <Grid container spacing={16}>
+        <Grid container spacing={8}>
           <Grid item xs={12} sm={12}>
             {this.cardList()}
           </Grid>

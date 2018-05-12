@@ -42,7 +42,6 @@ class App extends Component {
       <div>
         <CssBaseline />
 
-        <br />
         <RwAppBar />
         <PeopleList people={this.state.people} />
       </div>
