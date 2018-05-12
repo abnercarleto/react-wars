@@ -5,6 +5,8 @@ import Grid from 'material-ui/Grid';
 
 import PersonCard from './PersonCard';
 
+import PersonRepository from '../../repositories/PersonRepository'
+
 const styles = {
   root: {
     flexGrow: 1,
@@ -12,16 +14,31 @@ const styles = {
 }
 
 class PeopleList extends Component {
+  state = {
+    people: []
+  }
+
   constructor(props) {
     super(props);
-    const { classes, people } = props;
+    const { classes } = props;
     this.classes = classes;
-    this.people = people;
+  }
+
+  componentDidMount() {
+    PersonRepository.all()
+      .then(res => {
+        const people = res.data.results;
+        this.setState({ people });
+      })
   }
 
   cardList() {
-    return this.people.map(person => {
-      return (<PersonCard key={person.id} person={person} />);
+    return this.state.people.map(person => {
+      return (
+        <Grid item xs={4}>
+          <PersonCard key={person.url} person={person} />
+        </Grid>
+      );
     });
   }
 
@@ -29,9 +46,7 @@ class PeopleList extends Component {
     return (
       <div className={this.classes.root}>
         <Grid container spacing={8}>
-          <Grid item xs={12} sm={12}>
-            {this.cardList()}
-          </Grid>
+          {this.cardList()}
         </Grid>
       </div>
     )

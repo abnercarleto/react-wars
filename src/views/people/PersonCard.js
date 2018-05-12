@@ -9,7 +9,6 @@ import LabeldText from '../utils/LabeldText';
 
 const styles = {
   card: {
-    maxWidth: 350,
     marginTop: 5,
     marginLeft: 10,
     marginBottom: 5,
